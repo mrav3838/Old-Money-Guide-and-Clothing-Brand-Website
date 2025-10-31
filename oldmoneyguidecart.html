@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart | The Affordable Gentry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS Variables for Old Money Aesthetic (Consistent with new.html) */
+        :root {
+            --color-primary-navy: #001f3f; /* Deep Navy Blue */
+            --color-secondary-green: #154734; /* Forest Green */
+            --color-cream: #f4f1e8; /* Cream/Ivory */
+            --color-gold-accent: #b8860b; /* Muted Gold */
+            --font-serif: 'Garamond', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--color-cream);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary-navy);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-gold-accent);
+        }
+
+        /* Header & Navigation (Consistent with new.html) */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 5%;
+            background-color: #fff;
+            border-bottom: 1px solid var(--color-primary-navy);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .navbar li {
+            padding: 15px 15px;
+        }
+
+        .navbar li a {
+            text-transform: uppercase;
+            font-size: 0.9em;
+            color: var(--color-primary-navy);
+        }
+
+        .navbar li a:hover {
+            color: var(--color-gold-accent);
+            background-color: transparent;
+        }
+
+        /* Content Container & Layout */
+        .content-container {
+            padding: 50px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 3.5em;
+            color: var(--color-primary-navy);
+            font-weight: 700;
+            padding: 0 0 20px 0;
+            border-bottom: 2px solid var(--color-gold-accent);
+            margin-bottom: 50px;
+        }
+
+        /* Cart Layout */
+        .cart-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+        }
+
+        .cart-summary {
+            flex-basis: 350px;
+            padding: 25px;
+            background-color: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 100px; /* Keep it below the header */
+        }
+
+        /* Cart Item Styling */
+        .cart-item {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .item-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 1px solid var(--color-cream);
+        }
+
+        .item-details {
+            flex-grow: 1;
+        }
+
+        .item-details h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5em;
+            color: var(--color-secondary-green);
+            margin-bottom: 5px;
+        }
+
+        .item-details p {
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--color-primary-navy);
+            font-size: 1.2em;
+        }
+
+        /* Summary Styling */
+        .cart-summary h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8em;
+            color: var(--color-primary-navy);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--color-gold-accent);
+            padding-bottom: 10px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid var(--color-primary-navy);
+        }
+
+        /* CTA Button Styles (Copied from new.html) */
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 12px 30px;
+            margin-top: 25px;
+            background-color: var(--color-primary-navy);
+            color: var(--color-cream);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border: 2px solid var(--color-primary-navy);
+            transition: background-color 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-secondary-green);
+            border-color: var(--color-secondary-green);
+            color: white;
+        }
+
+        /* Empty Cart State */
+        .empty-cart {
+            text-align: center;
+            padding: 100px 0;
+            font-size: 1.5em;
+            color: #555;
+            font-family: var(--font-serif);
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 900px) {
+            .cart-layout {
+                flex-direction: column;
+            }
+
+            .cart-summary {
+                width: 100%;
+                position: static;
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="new.html">Homepage</a></li>
+                <li><a href="whatisoldmoneyaesthetic.html">What is Old Money Aesthetic?</a></li>
+                <li><a href="oldmoneyguidebuttonups.html">Button-Up Shirts</a></li>
+                <li><a href="oldmoneyguidepolo.html">Polo Tees</a></li>
+                <li><a href="oldmoneyguidepants.html">Pants</a></li>
+                <li><a href="oldmoneyguidesuits.html">Suits</a></li>
+                <li><a href="oldmoneyguidesweaters.html">Sweaters</a></li>
+                <li><a href="oldmoneyguideaccessories.html">Accessories</a></li>
+                <li><a href="oldmoneyguidefootwear.html">Footwear</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content-container">
+        <h1>Your Shopping Cart</h1>
+        
+        <div class="cart-layout">
+            <div class="cart-items">
+                <div class="cart-item">
+                    <img src="placeholder-polo.jpg" class="item-image" alt="Piqué Knit Polo">
+                    <div class="item-details">
+                        <h3>The Piqué Knit Polo - Navy</h3>
+                        <p>Color: Navy Blue</p>
+                        <p>Size: Medium (M)</p>
+                        <p>Qty: 1</p>
+                        <p class="item-price">$45.00</p>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="placeholder-suit.jpg" class="item-image" alt="Tailored Wool Trousers">
+                    <div class="item-details">
+                        <h3>Tailored Wool Trousers - Charcoal</h3>
+                        <p>Color: Charcoal Grey</p>
+                        <p>Size: Waist 32 / Length 30</p>
+                        <p>Qty: 1</p>
+                        <p class="item-price">$120.00</p>
+                    </div>
+                </div>
+
+                <div class="cart-item">
+                    <img src="placeholder-shoes.jpg" class="item-image" alt="Classic Penny Loafers">
+                    <div class="item-details">
+                        <h3>Classic Penny Loafers</h3>
+                        <p>Color: Dark Brown Leather</p>
+                        <p>Size: US 10</p>
+                        <p>Qty: 1</p>
+                        <p class="item-price">$89.00</p>
+                    </div>
+                </div>
+                </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span>$254.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Shipping:</span>
+                    <span>$10.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Taxes (Estimated):</span>
+                    <span>$15.24</span>
+                </div>
+
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span>$279.24</span>
+                </div>
+                
+                <a href="#" class="cta-button">Proceed to Checkout</a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

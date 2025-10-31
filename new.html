@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+        <style>
+    /* Base Styles & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary-navy: #001f3f; /* Deep Navy Blue */
+    --color-secondary-green: #154734; /* Forest Green */
+    --color-cream: #f4f1e8; /* Cream/Ivory */
+    --color-gold-accent: #b8860b; /* Muted Gold */
+    --font-serif: 'Garamond', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary-navy);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-gold-accent);
+}
+
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-cream);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-primary-navy);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px 0;
+}
+
+/* Dropdown Menu (Shop) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-top: 3px solid var(--color-gold-accent);
+    padding: 10px 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--color-primary-navy);
+    padding: 10px 16px;
+    display: block;
+    text-transform: none;
+}
+
+/* CTA Button Styles */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--color-primary-navy);
+    color: var(--color-cream);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid var(--color-primary-navy);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--color-secondary-green);
+    border-color: var(--color-secondary-green);
+    color: white;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: var(--color-primary-navy);
+    border-color: var(--color-primary-navy);
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--color-primary-navy);
+    color: var(--color-cream);
+}
+
+
+/* Hero Section */
+.hero {
+    background: url('placeholder-hero.jpg') center/cover no-repeat; /* Replace with your image */
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 10%;
+    position: relative;
+    /* Dark overlay for text readability */
+    box-shadow: inset 0 0 0 1000px rgba(0, 31, 63, 0.4); 
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 4em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* Value Proposition */
+.value-prop {
+    display: flex;
+    justify-content: space-around;
+    padding: 60px 5%;
+    background-color: var(--color-cream);
+    text-align: center;
+    border-bottom: 1px solid var(--color-primary-navy);
+}
+
+.prop-card {
+    flex-basis: 30%;
+}
+
+.prop-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5em;
+    color: var(--color-secondary-green);
+    margin-bottom: 10px;
+}
+
+/* Featured Collections */
+.featured-collection {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.featured-collection h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--color-primary-navy);
+}
+
+.collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.collection-item {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-item a {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+.collection-item a:hover {
+    background-color: rgba(21, 71, 52, 0.8); /* Secondary Green */
+}
+
+/* Background images for feature tiles - REPLACE WITH REAL IMAGES */
+.suit { background-image: url('placeholder-suit.jpg'); }
+.polo { background-image: url('placeholder-polo.jpg'); }
+.shirt { background-image: url('placeholder-shirt.jpg'); }
+
+/* Aesthetic Banner */
+.aesthetic-banner {
+    background-color: var(--color-primary-navy);
+    color: white;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+.aesthetic-banner h2 {
+    font-family: var(--font-serif);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.aesthetic-banner p {
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 5%;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin: 0 15px;
+    padding-bottom: 5px;
+}
+
+.footer-links a:hover {
+    color: var(--color-gold-accent);
+}
+
+footer p {
+    margin-top: 15px;
+}
+
+/* Original CSS from previous response: */
+nav ul {
+    list-style: none;
+    display: flex;
+    /* Adding overflow and white-space to handle many links */
+    overflow-x: auto; 
+    white-space: nowrap;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Affordable Gentry | Timeless Style, Accessible Price</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">The Affordable Gentry</div>
+        <nav>
+            <ul>
+                <li><a href="new.html" class="active">Homepage</a></li>
+                <li><a href="whatisoldmoneyaesthetic.html">What is Old Money Aesthetic?</a></li>
+                
+                <li><a href="oldmoneyguidebuttonups.html">Button-Up Shirts</a></li>
+                <li><a href="oldmoneyguidepolo.html">Polo Tees</a></li>
+                <li><a href="oldmoneyguidepants.html">Pants</a></li>
+                <li><a href="oldmoneyguidesuits.html">Suits</a></li>
+                <li><a href="oldmoneyguidesweaters.html">Sweaters</a></li>
+                <li><a href="oldmoneyguideaccessories.html">Accessories</a></li>
+                <li><a href="oldmoneyguidefootwear.html">Footwear</a></li>
+            </ul>
+        </nav>
+        <div class="cta-nav">
+            <a href="feedback.html" class="utility-link">Feedback</a> | <a href="oldmoneyguidecart.html">Cart</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>The Look of Legacy. The Price You Deserve.</h1>
+        <p>Timeless quality and classic style, brought to the modern wardrobe.</p>
+        <a href="#new-arrivals" class="cta-button">Shop The Collection</a>
+    </section>
+
+    <section class="value-prop">
+        <div class="prop-card">
+            <h3>Timeless Quality</h3>
+            <p>Curated fabrics designed to last beyond a single season.</p>
+        </div>
+        <div class="prop-card">
+            <h3>Affordable Prices</h3>
+            <p>The Old Money look, without the Old Money price tag.</p>
+        </div>
+        <div class="prop-card">
+            <h3>Classic Style</h3>
+            <p>Understated elegance. No visible logos, just perfect fit.</p>
+        </div>
+    </section>
+
+    <section id="new-arrivals" class="featured-collection">
+        <h2>Featured This Season</h2>
+        <div class="collection-grid">
+            <div class="collection-item suit">
+                <a href="suits.html">THE TAILORED SUIT COLLECTION</a>
+            </div>
+            <div class="collection-item polo">
+                <a href="polos.html">THE PIQUÉ KNIT POLOS</a>
+            </div>
+            <div class="collection-item shirt">
+                <a href="shirts.html">THE CLASSIC OXFORD SHIRTS</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="aesthetic-banner">
+        <h2>Curious About The Aesthetic?</h2>
+        <p>Learn the philosophy behind the clothes, and how to build your wardrobe.</p>
+        <a href="aesthetic.html" class="cta-button secondary">What is Old Money Aesthetic?</a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="feedback.html">Feedback</a> 
+            <a href="#">Shipping & Returns</a>
+            <a href="#">Size Guide</a>
+        </div>
+        <p>&copy; 2025 The Affordable Gentry. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

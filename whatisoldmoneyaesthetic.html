@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is the Old Money Aesthetic? | The Affordable Gentry Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Garamond:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS Variables for Old Money Aesthetic (Consistent with new.html) */
+        :root {
+            --color-primary-navy: #001f3f; /* Deep Navy Blue */
+            --color-secondary-green: #154734; /* Forest Green */
+            --color-cream: #f4f1e8; /* Cream/Ivory */
+            --color-gold-accent: #b8860b; /* Muted Gold */
+            --font-serif: 'Garamond', serif;
+            --font-sans: 'Lato', sans-serif;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--color-cream);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-primary-navy);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-gold-accent);
+        }
+
+        /* Header & Navigation (Consistent with new.html) */
+        .navbar {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 0 5%;
+            background-color: #fff;
+            border-bottom: 1px solid var(--color-primary-navy);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .navbar li {
+            padding: 15px 15px;
+        }
+
+        .navbar li a {
+            text-transform: uppercase;
+            font-size: 0.9em;
+            color: var(--color-primary-navy);
+        }
+
+        .navbar li a:hover {
+            color: var(--color-gold-accent);
+            background-color: transparent;
+        }
+
+        /* Content Container & Text Formatting */
+        .content-container {
+            padding: 0 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Page Title */
+        h1 {
+            text-align: center;
+            font-family: var(--font-serif);
+            font-size: 3.5em;
+            color: var(--color-primary-navy);
+            font-weight: 700;
+            padding: 40px 0 20px 0;
+            border-bottom: 2px solid var(--color-gold-accent);
+            margin-bottom: 30px;
+        }
+
+        /* Main Paragraphs */
+        .intro-text, .rule-text {
+            font-size: 1.5em; /* Larger, readable text */
+            font-family: var(--font-serif); /* Using serif for elegance */
+            color: var(--color-primary-navy); /* Setting a dark, consistent text color */
+            margin-bottom: 20px;
+            padding: 10px 0;
+        }
+        
+        /* Rule Numbering */
+        .rule-number {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--color-secondary-green); /* Use the accent color for prominence */
+            margin: 30px 0 10px 0;
+            display: block;
+        }
+
+        .image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+            margin: 20px 0;
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: var(--color-gold-accent);
+            margin: 40px 0;
+        }
+
+        /* Group images for multiple items in one rule */
+        .image-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .image-group .image {
+            width: calc(33.33% - 20px); /* 3 images per row for rules 1 and 4 */
+            max-height: 300px;
+            object-fit: cover;
+            margin: 0; /* Remove margin from image for grid spacing */
+        }
+
+        .image-group.palette .image {
+            width: calc(25% - 20px); /* 4 images per row for the palette */
+            max-height: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .image-group .image {
+                width: calc(50% - 10px); /* 2 images per row on smaller screens */
+            }
+            .image-group.palette .image {
+                width: calc(33.33% - 13px); /* 3 images per row for the palette */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="new.html">Homepage</a></li>
+                <li><a href="whatisoldmoneyaesthetic.html">What is Old Money Aesthetic?</a></li>
+                <li><a href="oldmoneyguidebuttonups.html">Button-Up Shirts</a></li>
+                <li><a href="oldmoneyguidepolo.html">Polo Tees</a></li>
+                <li><a href="oldmoneyguidepants.html">Pants</a></li>
+                <li><a href="oldmoneyguidesuits.html">Suits</a></li>
+                <li><a href="oldmoneyguidesweaters.html">Sweaters</a></li>
+                <li><a href="oldmoneyguideaccessories.html">Accessories</a></li>
+                <li><a href="oldmoneyguidefootwear.html">Footwear</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="content-container">
+        <h1>Old Money Aesthetic</h1>
+        
+        <p class="intro-text">
+            The **Old Money Aesthetic** is well-known for its **understated sophistication and elegance**, timeless design, well-tailored silhouettes, and high-end fabrics.
+        </p>
+        <img src="old money images/old money aesthetic 2.png" class="image" alt="Elegant man in classic clothing demonstrating the aesthetic">
+        
+        <p class="intro-text">
+            Ultimately, it's about making the right choices when purchasing your clothes. There are four ground rules you need to know to achieve this aesthetic:
+        </p>
+
+        <p class="rule-number">1. Forget the Flashy</p>
+        <p class="rule-text" style="color: #4a3106;">
+            Forget about large logos and graphic tees. Forget about varsity jackets.
+        </p>
+        <div class="image-group">
+            <img src="old money images/old money aesthetic 21.png" class="image" alt="Example of clothing with a prominent logo">
+            <img src="old money images/old money aesthetic 22.png" class="image" alt="Example of a graphic t-shirt">
+            <img src="old money images/old money aesthetic 23.png" class="image" alt="Example of a varsity jacket">
+        </div>
+        <hr>
+
+        <p class="rule-number" style="color: var(--color-primary-navy);">2. Stick to a Neutral Color Palette</p>
+        <p class="rule-text" style="color: var(--color-primary-navy);">
+            Focus on muted, timeless colors like:
+        </p>
+        <img src="old money images/old money colour palette.png" class="image" alt="Old money color palette chart">
+        <div class="image-group palette">
+            <img src="old money images/old money aesthetic 24.png" class="image" alt="Clothing in a neutral beige/tan color">
+            <img src="old money images/old money aesthetic 25.png" class="image" alt="Clothing in a deep navy blue color">
+            <img src="old money images/old money aesthetic 26.png" class="image" alt="Clothing in a charcoal grey color">
+            <img src="old money images/old money aesthetic 27.png" class="image" alt="Clothing in a crisp white or cream color">
+            <img src="old money images/old money aesthetic 28.png" class="image" alt="Clothing in an olive green color">
+            <img src="old money images/old money aesthetic 29.png" class="image" alt="Clothing in a burgundy or maroon color">
+            <img src="old money images/old money aesthetic 30.png" class="image" alt="Clothing in a light blue color">
+        </div>
+        <hr>
+
+        <p class="rule-number" style="color: var(--color-primary-navy);">3. Fit is Everything</p>
+        <p class="rule-text" style="color: var(--color-primary-navy);">
+            Skinny jeans and baggy pants won't work. Everything must be **fitted and well-tailored** to achieve a polished look.
+        </p>
+        <img src="old money images/old money aesthetic 36.png" class="image" alt="Man wearing a well-fitted suit or tailored outfit">
+        <hr>
+        
+        <p class="rule-number" style="color: var(--color-primary-navy);">4. Stick to Higher Quality Fabrics</p>
+        <p class="rule-text" style="color: var(--color-primary-navy);">
+            Focus on natural fibers that age gracefully and drape well:
+        </p>
+        <div class="image-group">
+            <img src="old money images/old money aesthetic 32.png" class="image" alt="Wool or tweed fabric texture"> 
+            <img src="old money images/old money aesthetic 31.png" class="image" alt="Cashmere or soft knit fabric texture"> 
+            <img src="old money images/old money aesthetic 33.png" class="image" alt="Fine cotton or linen fabric texture">
+            <img src="old money images/old money aesthetic 34.png" class="image" alt="Silk or satin fabric texture"> 
+            <img src="old money images/old money aesthetic 35.png" class="image" alt="Leather or suede material texture"> 
+        </div>
+        <hr>
+    </div>
+</body>
+</html>

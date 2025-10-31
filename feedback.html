@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        /* body{
+            background-color: rgb(242, 214, 165);
+        }
+        .container{
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            border: 3px solid;
+            border-color: antiquewhite;
+        } */
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+*{padding: 0;
+    margin:0;}
+    .nav{
+        background-color: rgba(255, 255, 0, 0.564);
+        height: 40;
+        width: 100%;
+        border: 3px;
+        border-color: black;
+        border-style: solid;
+        border-radius:80px; 
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 85;
+        margin-bottom: 85;
+        font-size: 200px;
+        font-style: italic;
+        color: white;
+        
+        
+    
+    
+    .hover-text {
+        font-size: 20px;
+        transition: font-size 0.3s ease;
+        text-decoration: none;
+    }
+    .hover-text:hover {
+        font-size: 30px;
+    
+    }
+}
+    .img{
+        float: right;
+        width: 50%;
+    }
+    .v2{float:inline-end;}
+    .v1{float: inline-start;}
+    .s{text-decoration: none;}
+    .o{font-size: 20px;
+    line-height: 40px;}
+    .j{line-height: 5px;
+    font-size:  40px;;
+    color: #2708ef;}
+    .londrina-sketch-regular {
+        font-family: "Londrina Sketch", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: x-large;
+        float:inherit;
+      }
+
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <form>
+            <div>
+                <label for="name">Name : </label>
+                <input type="text" id="name">
+            </div>
+            <div>
+                <label for="email">Email ID : </label>
+                <input type="email" id="email">
+            </div>
+            <div>
+                <label for="number">Phone No. : </label>
+                <input type="number" id="number">
+            </div>
+            Give Feedback about the Website experience : <textarea>Write Here :</textarea><br>
+            Give Feedback regarding the Website content : <textarea>Write Here :</textarea><br>
+            Give Feedback about the content I should add : <textarea>Write Here :</textarea><br>
+        </form>
+        <button class="btn">
+            Submit
+        </button>
+    </div> -->
+    <main>
+	<form action="/submit" method="post">
+		<div class="container">
+            <h1>Inquiry Form</h1>
+            <form action="" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="rating">Product required</label>
+                <select id="rating" name="rating" required>
+                    <option value="">accessories</option>
+                    <option value="Roller">shirts</option>
+                    <option value="chain">footwear</option>
+                    <option value="pin">pants</option>
+                    <option value="bushing">polo t-shirts</option>
+                    <option value="Spocket">suits</option>
+                    <option value="plates">sweaters</option>
+                    
+                </select>
+    
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" ></textarea>
+    
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </main>
+</body>
+</html>
+<!-- 
+<style>
+     .btn{
+        background-color: blue;
+        color: azure;
+        border-radius:15px;
+        border: 2px solid;
+        margin-top: 15px;
+        height: 35px;
+        width: 90px;
+        font-size: x-large;
+        border-color: blue;
+        transition: 1s;
+    }
+    .btn:hover{
+        background-color: azure;
+        color: blue;
+        border-color: azure;
+        border: 2px solid;
+        height: 50px;
+        width: 110px;
+    }
+    html, body{
+        font-size: x-large;
+    }
+</style>  -->
